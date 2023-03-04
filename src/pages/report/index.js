@@ -1,4 +1,8 @@
-import { createElement, useEffect, useState } from "react";
+import {
+  // createElement,
+  // useEffect,
+  useState
+} from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { fakeReportData } from "../../fake";
 
@@ -43,7 +47,8 @@ const Report = () => {
     // }).then((res) => {
     //   console.log(res)
     // })
-    setResult(fakeReportData.report_html)
+    console.log(fileData);
+    setResult(fakeReportData.report_html);
   }
 
   const renderResult = () => {

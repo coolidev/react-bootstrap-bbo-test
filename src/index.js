@@ -6,7 +6,6 @@ import reportWebVitals from './reportWebVitals';
 import './custom.scss'
 import { ThemeProvider } from 'react-bootstrap';
 import { SettingsProvider } from './contexts/SettingsContext';
-import { AuthProvider } from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,9 +15,7 @@ root.render(
       minBreakpoint="xxs"
     >
       <SettingsProvider>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
+        <App />
       </SettingsProvider>
     </ThemeProvider>
   </React.StrictMode>
