@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Col, Container, Dropdown, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
 import SettingsContext from '../../contexts/SettingsContext';
