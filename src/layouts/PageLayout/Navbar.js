@@ -24,16 +24,13 @@ const PageHeader = () => {
               <Navbar.Brand href="#home">
                 <img src={settings.logo} alt="" />
               </Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="ms-auto">
-                  <Link to={`/`} className={'nav-link'}>Home</Link>
-                  <Link to={`/report`} className={'nav-link'}>Report</Link>
-                  <NavDropdown title="User" id="basic-nav-dropdown" align="end">
-                    <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-              </Navbar.Collapse>
+              <Nav className="ms-auto">
+                <Link to={`/`} className={'nav-link'}>Home</Link>
+                <Link to={`/report`} className={'nav-link'}>Report</Link>
+                {user && <NavDropdown title="User" id="basic-nav-dropdown" align="end">
+                  <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+                </NavDropdown>}
+              </Nav>
             </Navbar>
           </Col>
         </Row>
@@ -47,15 +44,13 @@ const PageHeader = () => {
             </div>
             <div className="navbar fixed-top text-end" style={{ marginTop: '150px' }}>
               <div className="ms-auto"></div>
-              <Dropdown align="end">
-                <NavDropdown className="navbar-toggler collapsed" title={<span className="navbar-toggler-icon"></span>}>
-                  <Link to={`/`} className={'dropdown-item'}>Home</Link>
-                  <Link to={`/report`} className={'dropdown-item'}>Report</Link>
-                  {user && <NavDropdown.Item onClick={handleLogout}>
-                    Logout
-                  </NavDropdown.Item>}
-                </NavDropdown>
-              </Dropdown>
+              <NavDropdown className="navbar-toggler collapsed" title={<span className="navbar-toggler-icon"></span>}>
+                <Link to={`/`} className={'dropdown-item'}>Home</Link>
+                <Link to={`/report`} className={'dropdown-item'}>Report</Link>
+                {user && <NavDropdown.Item onClick={handleLogout}>
+                  Logout
+                </NavDropdown.Item>}
+              </NavDropdown>
             </div>
           </Col>
         </Row>
