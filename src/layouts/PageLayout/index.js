@@ -14,12 +14,19 @@ const PageLayout = () => {
     const handleSettings = (data) => {
       setUser(data)
     }
+      const uri = process.env.REACT_APP_API_URL
+      fetch(`${uri}/users/session`, {
+        method: "GET",
+        credentials: "omit",
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "GET"
+        }
+      }).then((res) => {
+        console.log(res)
+      })
 
     if (!pageLoad) {
-      // const newUser = await fetch(`${uri}/users/session`, {
-      //   method: "GET",
-      //   credentials: "same-origin",
-      // })
       //   .then((res) => {
       //     if (res.status === 200) {
       //       return res.json()
